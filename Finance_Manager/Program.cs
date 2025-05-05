@@ -16,7 +16,7 @@ namespace Finance_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new /*Form1()*/ Form2());
+            Application.Run(new /*Form1()*/ /*Form2()*/ Form3());
         }
     }
 }

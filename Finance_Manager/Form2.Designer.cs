@@ -194,7 +194,8 @@
             this.Controls.Add(this.txtsuppliername);
             this.Controls.Add(this.btnSave);
             this.Name = "Form2";
-            this.Text = "Supplier Name";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create New Supplier";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
