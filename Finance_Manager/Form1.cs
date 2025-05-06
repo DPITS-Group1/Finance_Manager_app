@@ -16,40 +16,5 @@ namespace Finance_Manager
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            btnActivePageIndicator.Top = btnDashboard.Top;
-        }
-
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            btnActivePageIndicator.Top = btnReports.Top;
-        }
-
-        private void btnSupplierInvoice_Click(object sender, EventArgs e)
-        {
-            btnActivePageIndicator.Top = btnSupplierInvoice.Top;
-        }
-
-        private void btnCustomerInvoice_Click(object sender, EventArgs e)
-        {
-            btnActivePageIndicator.Top = btnCustomerInvoice.Top;
-        }
-
-        private void btnExpenses_Click(object sender, EventArgs e)
-        {
-            btnActivePageIndicator.Top = btnExpenses.Top;
-        }
-
-        private void btnIncome_Click(object sender, EventArgs e)
-        {
-            btnActivePageIndicator.Top = btnIncome.Top;
-        }
     }
 }
