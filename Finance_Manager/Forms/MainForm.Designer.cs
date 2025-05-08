@@ -1,6 +1,6 @@
 ﻿namespace Finance_Manager
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.header = new System.Windows.Forms.Panel();
             this.btnpower = new System.Windows.Forms.Button();
             this.Heading = new System.Windows.Forms.Label();
             this.SideNavigation = new System.Windows.Forms.Panel();
+            this.btnActivePageIndicator = new System.Windows.Forms.Panel();
             this.btnIncome = new System.Windows.Forms.Button();
             this.btnExpenses = new System.Windows.Forms.Button();
             this.btnCustomerInvoice = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnActivePageIndicator = new System.Windows.Forms.Panel();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.header.SuspendLayout();
             this.SideNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +88,7 @@
             this.Heading.AutoSize = true;
             this.Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.Heading.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Heading.Location = new System.Drawing.Point(87, 17);
+            this.Heading.Location = new System.Drawing.Point(15, 17);
             this.Heading.Name = "Heading";
             this.Heading.Size = new System.Drawing.Size(200, 29);
             this.Heading.TabIndex = 1;
@@ -116,6 +117,14 @@
             this.SideNavigation.Size = new System.Drawing.Size(208, 566);
             this.SideNavigation.TabIndex = 1;
             // 
+            // btnActivePageIndicator
+            // 
+            this.btnActivePageIndicator.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnActivePageIndicator.Location = new System.Drawing.Point(15, 51);
+            this.btnActivePageIndicator.Name = "btnActivePageIndicator";
+            this.btnActivePageIndicator.Size = new System.Drawing.Size(10, 30);
+            this.btnActivePageIndicator.TabIndex = 2;
+            // 
             // btnIncome
             // 
             this.btnIncome.AutoSize = true;
@@ -126,7 +135,7 @@
             this.btnIncome.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnIncome.Image = ((System.Drawing.Image)(resources.GetObject("btnIncome.Image")));
             this.btnIncome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIncome.Location = new System.Drawing.Point(27, 381);
+            this.btnIncome.Location = new System.Drawing.Point(27, 348);
             this.btnIncome.Margin = new System.Windows.Forms.Padding(5);
             this.btnIncome.Name = "btnIncome";
             this.btnIncome.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -147,7 +156,7 @@
             this.btnExpenses.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnExpenses.Image = ((System.Drawing.Image)(resources.GetObject("btnExpenses.Image")));
             this.btnExpenses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExpenses.Location = new System.Drawing.Point(27, 331);
+            this.btnExpenses.Location = new System.Drawing.Point(27, 298);
             this.btnExpenses.Margin = new System.Windows.Forms.Padding(5);
             this.btnExpenses.Name = "btnExpenses";
             this.btnExpenses.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -168,7 +177,7 @@
             this.btnCustomerInvoice.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCustomerInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerInvoice.Image")));
             this.btnCustomerInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomerInvoice.Location = new System.Drawing.Point(27, 281);
+            this.btnCustomerInvoice.Location = new System.Drawing.Point(27, 248);
             this.btnCustomerInvoice.Margin = new System.Windows.Forms.Padding(5);
             this.btnCustomerInvoice.Name = "btnCustomerInvoice";
             this.btnCustomerInvoice.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -189,7 +198,7 @@
             this.btnSupplierInvoice.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSupplierInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierInvoice.Image")));
             this.btnSupplierInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSupplierInvoice.Location = new System.Drawing.Point(27, 231);
+            this.btnSupplierInvoice.Location = new System.Drawing.Point(27, 198);
             this.btnSupplierInvoice.Margin = new System.Windows.Forms.Padding(5);
             this.btnSupplierInvoice.Name = "btnSupplierInvoice";
             this.btnSupplierInvoice.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -210,7 +219,7 @@
             this.btnReports.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReports.Image = ((System.Drawing.Image)(resources.GetObject("btnReports.Image")));
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(27, 110);
+            this.btnReports.Location = new System.Drawing.Point(27, 99);
             this.btnReports.Margin = new System.Windows.Forms.Padding(5);
             this.btnReports.Name = "btnReports";
             this.btnReports.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -231,7 +240,7 @@
             this.btnDashboard.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(27, 60);
+            this.btnDashboard.Location = new System.Drawing.Point(27, 49);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(5);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -245,44 +254,47 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(15, 209);
+            this.label2.Location = new System.Drawing.Point(15, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.Size = new System.Drawing.Size(89, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Transactions";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(15, 36);
+            this.label1.Location = new System.Drawing.Point(15, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Overview";
             // 
-            // btnActivePageIndicator
+            // ContentPanel
             // 
-            this.btnActivePageIndicator.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnActivePageIndicator.Location = new System.Drawing.Point(15, 62);
-            this.btnActivePageIndicator.Name = "btnActivePageIndicator";
-            this.btnActivePageIndicator.Size = new System.Drawing.Size(10, 30);
-            this.btnActivePageIndicator.TabIndex = 2;
+            this.ContentPanel.Location = new System.Drawing.Point(207, 70);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(868, 490);
+            this.ContentPanel.TabIndex = 2;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1075, 561);
+            this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.SideNavigation);
             this.Controls.Add(this.header);
             this.MinimumSize = new System.Drawing.Size(1091, 600);
-            this.Name = "Form1";
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Finance Manager";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.SideNavigation.ResumeLayout(false);
@@ -306,6 +318,7 @@
         private System.Windows.Forms.Button btnExpenses;
         private System.Windows.Forms.Button btnpower;
         private System.Windows.Forms.Panel btnActivePageIndicator;
+        private System.Windows.Forms.Panel ContentPanel;
     }
 }
 

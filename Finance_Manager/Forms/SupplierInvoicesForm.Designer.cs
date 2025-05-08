@@ -1,6 +1,6 @@
 ﻿namespace Finance_Manager
 {
-    partial class Form2
+    partial class SupplierInvoicesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(631, 399);
+            this.btnSave.Location = new System.Drawing.Point(663, 399);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(137, 39);
             this.btnSave.TabIndex = 0;
@@ -71,7 +71,7 @@
             // 
             // txtinvoicenumber
             // 
-            this.txtinvoicenumber.Location = new System.Drawing.Point(555, 103);
+            this.txtinvoicenumber.Location = new System.Drawing.Point(587, 103);
             this.txtinvoicenumber.Name = "txtinvoicenumber";
             this.txtinvoicenumber.Size = new System.Drawing.Size(213, 20);
             this.txtinvoicenumber.TabIndex = 3;
@@ -88,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(449, 107);
+            this.label2.Location = new System.Drawing.Point(481, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 6;
@@ -113,7 +113,7 @@
             // cmbpaymentterms
             // 
             this.cmbpaymentterms.FormattingEnabled = true;
-            this.cmbpaymentterms.Location = new System.Drawing.Point(555, 185);
+            this.cmbpaymentterms.Location = new System.Drawing.Point(587, 185);
             this.cmbpaymentterms.Name = "cmbpaymentterms";
             this.cmbpaymentterms.Size = new System.Drawing.Size(213, 21);
             this.cmbpaymentterms.TabIndex = 9;
@@ -121,7 +121,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(449, 185);
+            this.label4.Location = new System.Drawing.Point(481, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 10;
@@ -156,7 +156,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(488, 399);
+            this.btnClear.Location = new System.Drawing.Point(520, 399);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(137, 39);
             this.btnClear.TabIndex = 14;
@@ -173,11 +173,11 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Invoice Date";
             // 
-            // Form2
+            // SupplierInvoicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(868, 490);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label6);
@@ -193,7 +193,8 @@
             this.Controls.Add(this.txtamount);
             this.Controls.Add(this.txtsuppliername);
             this.Controls.Add(this.btnSave);
-            this.Name = "Form2";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "SupplierInvoicesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New Supplier";
             this.Load += new System.EventHandler(this.Form2_Load);
