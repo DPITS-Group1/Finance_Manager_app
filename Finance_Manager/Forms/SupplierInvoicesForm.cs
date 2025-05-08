@@ -6,12 +6,12 @@ using Finance_Manager.Models;
 
 namespace Finance_Manager
 {
-    public partial class Form2 : Form
+    public partial class SupplierInvoicesForm : Form
     {
 
       
 
-        public Form2()
+        public SupplierInvoicesForm()
         {
             InitializeComponent();
         }

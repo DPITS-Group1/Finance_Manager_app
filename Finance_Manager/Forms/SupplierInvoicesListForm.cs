@@ -1,20 +1,15 @@
 ﻿using Finance_Manager.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Finance_Manager
 {
-    public partial class Form3 : Form
+    public partial class SupplierInvoicesListForm : Form
     {
 
-        public Form3()
+        public SupplierInvoicesListForm()
         {
             InitializeComponent();
 
@@ -120,6 +115,8 @@ namespace Finance_Manager
             this.Cursor = Cursors.WaitCursor;
             dgvInvoices.Enabled = false;
             btnRefresh.Enabled = false;
+            buttonSaveAsCSV.Enabled = false;
+            buttonSaveAsPDF.Enabled = false;
 
             try
             {
@@ -143,6 +140,8 @@ namespace Finance_Manager
                 this.Cursor = Cursors.Default;
                 dgvInvoices.Enabled = true;
                 btnRefresh.Enabled = true;
+                buttonSaveAsCSV.Enabled = true;
+                buttonSaveAsPDF.Enabled = true;
             }
         }
 
@@ -155,11 +154,11 @@ namespace Finance_Manager
             await LoadInvoiceDataAsync();
         }
 
-        private void btnOpenSupplierForm_Click(object sender, EventArgs e)
-        {
-            Form2 supplierForm = new Form2();
-            supplierForm.Show();
-        }
+        //private void btnOpenSupplierForm_Click(object sender, EventArgs e)
+        //{
+        //    SupplierInvoicesForm supplierForm = new SupplierInvoicesForm();
+        //    supplierForm.ShowDialog();
+        //}
 
     
     }
