@@ -24,32 +24,44 @@ namespace Finance_Manager
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            btnActivePageIndicator.Top = btnDashboard.Top;
+            ActivePageIndicator.Top = btnDashboard.Top;
+            dashboard_Control1.BringToFront();
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            btnActivePageIndicator.Top = btnReports.Top;
+            ActivePageIndicator.Top = btnReports.Top;
+            reports_Control1.BringToFront();
         }
 
         private void btnSupplierInvoice_Click(object sender, EventArgs e)
         {
-            btnActivePageIndicator.Top = btnSupplierInvoice.Top;
+            ActivePageIndicator.Top = btnSupplierInvoice.Top;
+            supplier_Control1.BringToFront();
         }
 
         private void btnCustomerInvoice_Click(object sender, EventArgs e)
         {
-            btnActivePageIndicator.Top = btnCustomerInvoice.Top;
+            ActivePageIndicator.Top = btnCustomerInvoice.Top;
+            customerInvoice_Control1.BringToFront();
         }
 
         private void btnExpenses_Click(object sender, EventArgs e)
         {
-            btnActivePageIndicator.Top = btnExpenses.Top;
+            ActivePageIndicator.Top = btnExpenses.Top;
+            expenses_Control1.BringToFront();
         }
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
-            btnActivePageIndicator.Top = btnIncome.Top;
+            ActivePageIndicator.Top = btnIncome.Top;
+            
+
+        }
+
+        private void header_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

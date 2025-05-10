@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.ActivePageIndicator = new System.Windows.Forms.Panel();
             this.header = new System.Windows.Forms.Panel();
             this.btnpower = new System.Windows.Forms.Button();
             this.Heading = new System.Windows.Forms.Label();
@@ -41,16 +42,30 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnActivePageIndicator = new System.Windows.Forms.Panel();
+            this.income_Control1 = new Finance_Manager.Income_Control();
+            this.expenses_Control1 = new Finance_Manager.Expenses_Control();
+            this.customerInvoice_Control1 = new Finance_Manager.CustomerInvoice_Control();
+            this.supplier_Control1 = new Finance_Manager.Supplier_Control();
+            this.reports_Control1 = new Finance_Manager.Reports_Control();
+            this.dashboard_Control1 = new Finance_Manager.Dashboard_Control();
             this.header.SuspendLayout();
             this.SideNavigation.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ActivePageIndicator
+            // 
+            this.ActivePageIndicator.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ActivePageIndicator.Location = new System.Drawing.Point(15, 62);
+            this.ActivePageIndicator.Name = "ActivePageIndicator";
+            this.ActivePageIndicator.Size = new System.Drawing.Size(10, 30);
+            this.ActivePageIndicator.TabIndex = 2;
             // 
             // header
             // 
             this.header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.header.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.header.BackColor = System.Drawing.Color.GhostWhite;
             this.header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.header.Controls.Add(this.btnpower);
             this.header.Controls.Add(this.Heading);
@@ -58,25 +73,26 @@
             this.header.Location = new System.Drawing.Point(202, -1);
             this.header.Margin = new System.Windows.Forms.Padding(0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(873, 68);
+            this.header.Size = new System.Drawing.Size(876, 68);
             this.header.TabIndex = 0;
+            this.header.Paint += new System.Windows.Forms.PaintEventHandler(this.header_Paint);
             // 
             // btnpower
             // 
             this.btnpower.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnpower.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnpower.BackColor = System.Drawing.SystemColors.Control;
+            this.btnpower.BackColor = System.Drawing.Color.GhostWhite;
             this.btnpower.FlatAppearance.BorderSize = 0;
             this.btnpower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpower.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpower.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnpower.Image = ((System.Drawing.Image)(resources.GetObject("btnpower.Image")));
             this.btnpower.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpower.Location = new System.Drawing.Point(812, 17);
+            this.btnpower.Location = new System.Drawing.Point(818, 17);
             this.btnpower.Margin = new System.Windows.Forms.Padding(5);
             this.btnpower.Name = "btnpower";
             this.btnpower.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnpower.Size = new System.Drawing.Size(46, 30);
+            this.btnpower.Size = new System.Drawing.Size(43, 34);
             this.btnpower.TabIndex = 8;
             this.btnpower.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnpower.UseVisualStyleBackColor = false;
@@ -98,9 +114,9 @@
             // 
             this.SideNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.SideNavigation.BackColor = System.Drawing.SystemColors.Control;
+            this.SideNavigation.BackColor = System.Drawing.Color.GhostWhite;
             this.SideNavigation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SideNavigation.Controls.Add(this.btnActivePageIndicator);
+            this.SideNavigation.Controls.Add(this.ActivePageIndicator);
             this.SideNavigation.Controls.Add(this.btnIncome);
             this.SideNavigation.Controls.Add(this.btnExpenses);
             this.SideNavigation.Controls.Add(this.btnCustomerInvoice);
@@ -113,13 +129,13 @@
             this.SideNavigation.Location = new System.Drawing.Point(-4, -1);
             this.SideNavigation.Margin = new System.Windows.Forms.Padding(0);
             this.SideNavigation.Name = "SideNavigation";
-            this.SideNavigation.Size = new System.Drawing.Size(208, 566);
+            this.SideNavigation.Size = new System.Drawing.Size(208, 577);
             this.SideNavigation.TabIndex = 1;
             // 
             // btnIncome
             // 
             this.btnIncome.AutoSize = true;
-            this.btnIncome.BackColor = System.Drawing.SystemColors.Control;
+            this.btnIncome.BackColor = System.Drawing.Color.GhostWhite;
             this.btnIncome.FlatAppearance.BorderSize = 0;
             this.btnIncome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,7 +156,7 @@
             // btnExpenses
             // 
             this.btnExpenses.AutoSize = true;
-            this.btnExpenses.BackColor = System.Drawing.SystemColors.Control;
+            this.btnExpenses.BackColor = System.Drawing.Color.GhostWhite;
             this.btnExpenses.FlatAppearance.BorderSize = 0;
             this.btnExpenses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExpenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,7 +177,7 @@
             // btnCustomerInvoice
             // 
             this.btnCustomerInvoice.AutoSize = true;
-            this.btnCustomerInvoice.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCustomerInvoice.BackColor = System.Drawing.Color.GhostWhite;
             this.btnCustomerInvoice.FlatAppearance.BorderSize = 0;
             this.btnCustomerInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,7 +198,7 @@
             // btnSupplierInvoice
             // 
             this.btnSupplierInvoice.AutoSize = true;
-            this.btnSupplierInvoice.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSupplierInvoice.BackColor = System.Drawing.Color.GhostWhite;
             this.btnSupplierInvoice.FlatAppearance.BorderSize = 0;
             this.btnSupplierInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupplierInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,7 +219,7 @@
             // btnReports
             // 
             this.btnReports.AutoSize = true;
-            this.btnReports.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReports.BackColor = System.Drawing.Color.GhostWhite;
             this.btnReports.FlatAppearance.BorderSize = 0;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -224,7 +240,7 @@
             // btnDashboard
             // 
             this.btnDashboard.AutoSize = true;
-            this.btnDashboard.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDashboard.BackColor = System.Drawing.Color.GhostWhite;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,25 +280,68 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Overview";
             // 
-            // btnActivePageIndicator
+            // income_Control1
             // 
-            this.btnActivePageIndicator.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnActivePageIndicator.Location = new System.Drawing.Point(15, 62);
-            this.btnActivePageIndicator.Name = "btnActivePageIndicator";
-            this.btnActivePageIndicator.Size = new System.Drawing.Size(10, 30);
-            this.btnActivePageIndicator.TabIndex = 2;
+            this.income_Control1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.income_Control1.Location = new System.Drawing.Point(206, 68);
+            this.income_Control1.Margin = new System.Windows.Forms.Padding(6);
+            this.income_Control1.Name = "income_Control1";
+            this.income_Control1.Size = new System.Drawing.Size(873, 503);
+            this.income_Control1.TabIndex = 2;
+            // 
+            // expenses_Control1
+            // 
+            this.expenses_Control1.Location = new System.Drawing.Point(205, 68);
+            this.expenses_Control1.Name = "expenses_Control1";
+            this.expenses_Control1.Size = new System.Drawing.Size(873, 503);
+            this.expenses_Control1.TabIndex = 3;
+            // 
+            // customerInvoice_Control1
+            // 
+            this.customerInvoice_Control1.Location = new System.Drawing.Point(204, 68);
+            this.customerInvoice_Control1.Name = "customerInvoice_Control1";
+            this.customerInvoice_Control1.Size = new System.Drawing.Size(873, 503);
+            this.customerInvoice_Control1.TabIndex = 4;
+            // 
+            // supplier_Control1
+            // 
+            this.supplier_Control1.Location = new System.Drawing.Point(205, 68);
+            this.supplier_Control1.Name = "supplier_Control1";
+            this.supplier_Control1.Size = new System.Drawing.Size(873, 503);
+            this.supplier_Control1.TabIndex = 5;
+            // 
+            // reports_Control1
+            // 
+            this.reports_Control1.Location = new System.Drawing.Point(204, 69);
+            this.reports_Control1.Name = "reports_Control1";
+            this.reports_Control1.Size = new System.Drawing.Size(873, 503);
+            this.reports_Control1.TabIndex = 6;
+            // 
+            // dashboard_Control1
+            // 
+            this.dashboard_Control1.Location = new System.Drawing.Point(205, 68);
+            this.dashboard_Control1.Name = "dashboard_Control1";
+            this.dashboard_Control1.Size = new System.Drawing.Size(873, 503);
+            this.dashboard_Control1.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1075, 561);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1078, 572);
+            this.Controls.Add(this.dashboard_Control1);
+            this.Controls.Add(this.reports_Control1);
+            this.Controls.Add(this.supplier_Control1);
+            this.Controls.Add(this.customerInvoice_Control1);
+            this.Controls.Add(this.expenses_Control1);
+            this.Controls.Add(this.income_Control1);
             this.Controls.Add(this.SideNavigation);
             this.Controls.Add(this.header);
             this.MinimumSize = new System.Drawing.Size(1091, 600);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.SideNavigation.ResumeLayout(false);
@@ -305,7 +364,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnExpenses;
         private System.Windows.Forms.Button btnpower;
-        private System.Windows.Forms.Panel btnActivePageIndicator;
+        private System.Windows.Forms.Panel ActivePageIndicator;
+        private Income_Control income_Control1;
+        private Expenses_Control expenses_Control1;
+        private CustomerInvoice_Control customerInvoice_Control1;
+        private Supplier_Control supplier_Control1;
+        private Reports_Control reports_Control1;
+        private Dashboard_Control dashboard_Control1;
     }
 }
 
