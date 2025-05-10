@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 24);
+            this.label1.Location = new System.Drawing.Point(38, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 24);
             this.label1.TabIndex = 0;
@@ -51,10 +51,10 @@
             this.tbcCustomerInvoices.Controls.Add(this.tabPage1);
             this.tbcCustomerInvoices.Controls.Add(this.tabPage2);
             this.tbcCustomerInvoices.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbcCustomerInvoices.Location = new System.Drawing.Point(3, 64);
+            this.tbcCustomerInvoices.Location = new System.Drawing.Point(38, 64);
             this.tbcCustomerInvoices.Name = "tbcCustomerInvoices";
             this.tbcCustomerInvoices.SelectedIndex = 0;
-            this.tbcCustomerInvoices.Size = new System.Drawing.Size(852, 436);
+            this.tbcCustomerInvoices.Size = new System.Drawing.Size(835, 436);
             this.tbcCustomerInvoices.TabIndex = 1;
             // 
             // tabPage1
@@ -62,7 +62,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(844, 404);
+            this.tabPage1.Size = new System.Drawing.Size(827, 404);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer List";
             this.tabPage1.UseVisualStyleBackColor = true;

@@ -57,10 +57,10 @@
             this.tbcSupplierInvoices.Controls.Add(this.tabPage1);
             this.tbcSupplierInvoices.Controls.Add(this.tabPage2);
             this.tbcSupplierInvoices.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbcSupplierInvoices.Location = new System.Drawing.Point(18, 64);
+            this.tbcSupplierInvoices.Location = new System.Drawing.Point(38, 64);
             this.tbcSupplierInvoices.Name = "tbcSupplierInvoices";
             this.tbcSupplierInvoices.SelectedIndex = 0;
-            this.tbcSupplierInvoices.Size = new System.Drawing.Size(852, 436);
+            this.tbcSupplierInvoices.Size = new System.Drawing.Size(835, 436);
             this.tbcSupplierInvoices.TabIndex = 0;
             // 
             // tabPage1
@@ -68,7 +68,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(844, 404);
+            this.tabPage1.Size = new System.Drawing.Size(827, 404);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Invoice List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -242,7 +242,7 @@
             // 
             this.lblSupplierInvoices.AutoSize = true;
             this.lblSupplierInvoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierInvoices.Location = new System.Drawing.Point(14, 20);
+            this.lblSupplierInvoices.Location = new System.Drawing.Point(38, 20);
             this.lblSupplierInvoices.Name = "lblSupplierInvoices";
             this.lblSupplierInvoices.Size = new System.Drawing.Size(171, 24);
             this.lblSupplierInvoices.TabIndex = 1;
