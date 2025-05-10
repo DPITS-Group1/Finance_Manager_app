@@ -55,7 +55,7 @@
             // 
             this.lblExpense.AutoSize = true;
             this.lblExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpense.Location = new System.Drawing.Point(6, 19);
+            this.lblExpense.Location = new System.Drawing.Point(38, 19);
             this.lblExpense.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblExpense.Name = "lblExpense";
             this.lblExpense.Size = new System.Drawing.Size(103, 24);
@@ -68,7 +68,7 @@
             this.tabExpenseList.Location = new System.Drawing.Point(4, 27);
             this.tabExpenseList.Name = "tabExpenseList";
             this.tabExpenseList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExpenseList.Size = new System.Drawing.Size(852, 362);
+            this.tabExpenseList.Size = new System.Drawing.Size(827, 405);
             this.tabExpenseList.TabIndex = 0;
             this.tabExpenseList.Text = "Expense List";
             this.tabExpenseList.UseVisualStyleBackColor = true;
@@ -78,10 +78,10 @@
             this.tabExpense.Controls.Add(this.tabExpenseList);
             this.tabExpense.Controls.Add(this.tabRecordExpense);
             this.tabExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabExpense.Location = new System.Drawing.Point(10, 91);
+            this.tabExpense.Location = new System.Drawing.Point(38, 91);
             this.tabExpense.Name = "tabExpense";
             this.tabExpense.SelectedIndex = 0;
-            this.tabExpense.Size = new System.Drawing.Size(860, 393);
+            this.tabExpense.Size = new System.Drawing.Size(835, 436);
             this.tabExpense.TabIndex = 5;
             // 
             // tabRecordExpense
@@ -90,7 +90,7 @@
             this.tabRecordExpense.Location = new System.Drawing.Point(4, 27);
             this.tabRecordExpense.Name = "tabRecordExpense";
             this.tabRecordExpense.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRecordExpense.Size = new System.Drawing.Size(766, 362);
+            this.tabRecordExpense.Size = new System.Drawing.Size(852, 362);
             this.tabRecordExpense.TabIndex = 1;
             this.tabRecordExpense.Text = "Record Expense";
             this.tabRecordExpense.UseVisualStyleBackColor = true;

@@ -32,8 +32,8 @@
             this.btnNewIncome = new System.Windows.Forms.Button();
             this.tabIncome = new System.Windows.Forms.TabControl();
             this.tabIncomeList = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.customerInvoice_Control1 = new Finance_Manager.CustomerInvoice_Control();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabIncome.SuspendLayout();
             this.tabIncomeList.SuspendLayout();
             this.SuspendLayout();
@@ -41,7 +41,7 @@
             // lblIncome
             // 
             this.lblIncome.AutoSize = true;
-            this.lblIncome.Location = new System.Drawing.Point(6, 19);
+            this.lblIncome.Location = new System.Drawing.Point(38, 19);
             this.lblIncome.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIncome.Name = "lblIncome";
             this.lblIncome.Size = new System.Drawing.Size(87, 25);
@@ -68,10 +68,10 @@
             this.tabIncome.Controls.Add(this.tabIncomeList);
             this.tabIncome.Controls.Add(this.tabPage2);
             this.tabIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabIncome.Location = new System.Drawing.Point(11, 81);
+            this.tabIncome.Location = new System.Drawing.Point(38, 81);
             this.tabIncome.Name = "tabIncome";
             this.tabIncome.SelectedIndex = 0;
-            this.tabIncome.Size = new System.Drawing.Size(859, 404);
+            this.tabIncome.Size = new System.Drawing.Size(835, 436);
             this.tabIncome.TabIndex = 2;
             // 
             // tabIncomeList
@@ -81,10 +81,18 @@
             this.tabIncomeList.Location = new System.Drawing.Point(4, 27);
             this.tabIncomeList.Name = "tabIncomeList";
             this.tabIncomeList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabIncomeList.Size = new System.Drawing.Size(851, 373);
+            this.tabIncomeList.Size = new System.Drawing.Size(827, 405);
             this.tabIncomeList.TabIndex = 0;
             this.tabIncomeList.Text = "Income List";
             this.tabIncomeList.UseVisualStyleBackColor = true;
+            // 
+            // customerInvoice_Control1
+            // 
+            this.customerInvoice_Control1.Location = new System.Drawing.Point(257, 128);
+            this.customerInvoice_Control1.Margin = new System.Windows.Forms.Padding(4);
+            this.customerInvoice_Control1.Name = "customerInvoice_Control1";
+            this.customerInvoice_Control1.Size = new System.Drawing.Size(8, 8);
+            this.customerInvoice_Control1.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -96,14 +104,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Record Income";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // customerInvoice_Control1
-            // 
-            this.customerInvoice_Control1.Location = new System.Drawing.Point(257, 128);
-            this.customerInvoice_Control1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.customerInvoice_Control1.Name = "customerInvoice_Control1";
-            this.customerInvoice_Control1.Size = new System.Drawing.Size(8, 8);
-            this.customerInvoice_Control1.TabIndex = 0;
             // 
             // Income_Control
             // 

@@ -44,7 +44,7 @@
             // 
             this.btnReports.AutoSize = true;
             this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.Location = new System.Drawing.Point(43, 32);
+            this.btnReports.Location = new System.Drawing.Point(38, 32);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(94, 25);
             this.btnReports.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(48, 83);
+            this.panel1.Location = new System.Drawing.Point(38, 83);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 251);
             this.panel1.TabIndex = 1;
