@@ -47,7 +47,7 @@
             this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.btnSaveSupplier = new System.Windows.Forms.Button();
             this.lblSupplierInvoices = new System.Windows.Forms.Label();
-            this.btnCreateInvoice = new System.Windows.Forms.Button();
+            this.btnCreateSupplierInvoice = new System.Windows.Forms.Button();
             this.tbcSupplierInvoices.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +94,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(758, 404);
+            this.tabPage2.Size = new System.Drawing.Size(844, 404);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Create Invoice";
             // 
@@ -248,23 +248,23 @@
             this.lblSupplierInvoices.TabIndex = 1;
             this.lblSupplierInvoices.Text = "Supplier Invoices";
             // 
-            // btnCreateInvoice
+            // btnCreateSupplierInvoice
             // 
-            this.btnCreateInvoice.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCreateInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCreateInvoice.Location = new System.Drawing.Point(698, 13);
-            this.btnCreateInvoice.Name = "btnCreateInvoice";
-            this.btnCreateInvoice.Size = new System.Drawing.Size(168, 41);
-            this.btnCreateInvoice.TabIndex = 2;
-            this.btnCreateInvoice.Text = "+ Create Invoice";
-            this.btnCreateInvoice.UseVisualStyleBackColor = false;
+            this.btnCreateSupplierInvoice.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCreateSupplierInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSupplierInvoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCreateSupplierInvoice.Location = new System.Drawing.Point(698, 13);
+            this.btnCreateSupplierInvoice.Name = "btnCreateSupplierInvoice";
+            this.btnCreateSupplierInvoice.Size = new System.Drawing.Size(168, 41);
+            this.btnCreateSupplierInvoice.TabIndex = 2;
+            this.btnCreateSupplierInvoice.Text = "+ New Invoice";
+            this.btnCreateSupplierInvoice.UseVisualStyleBackColor = false;
             // 
             // Supplier_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnCreateInvoice);
+            this.Controls.Add(this.btnCreateSupplierInvoice);
             this.Controls.Add(this.lblSupplierInvoices);
             this.Controls.Add(this.tbcSupplierInvoices);
             this.Name = "Supplier_Control";
@@ -298,6 +298,6 @@
         private System.Windows.Forms.TextBox txtSupplierName;
         private System.Windows.Forms.Button btnSaveSupplier;
         private System.Windows.Forms.Label lblSupplierInvoices;
-        private System.Windows.Forms.Button btnCreateInvoice;
+        private System.Windows.Forms.Button btnCreateSupplierInvoice;
     }
 }

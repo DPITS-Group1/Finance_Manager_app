@@ -55,8 +55,7 @@ namespace Finance_Manager
         private void btnIncome_Click(object sender, EventArgs e)
         {
             ActivePageIndicator.Top = btnIncome.Top;
-            
-
+            income_Control1.BringToFront();
         }
 
         private void header_Paint(object sender, PaintEventArgs e)
