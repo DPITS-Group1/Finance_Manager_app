@@ -160,11 +160,10 @@ namespace Finance_Manager
             try
             {
                 // Ask Supabase for all data (*) from the SupplierInvoice table
-                var response = await _supabaseClient
-                    .From<SupplierInvoice>()
-                    // .Select("*") // Select all columns (this is often the default)
-                    // You could also specify columns: .Select("id, supplier_name, invoice_number, invoice_date, amount, status")
-                    .Get(); // Execute the request
+                var response = await _supabaseClient.From<SupplierInvoice>().Get();
+                // .Select("*") // Select all columns (this is often the default)
+                // You could also specify columns: .Select("id, supplier_name, invoice_number, invoice_date, amount, status")
+                // Execute the request
 
                 // Check if the database sent back data
                 if (response?.Models != null)
@@ -186,6 +185,55 @@ namespace Finance_Manager
                 // Throw a new error message
                 throw new Exception($"Failed to fetch invoices. Details: {ex.Message}", ex);
             }
+        }
+
+
+        /// <summary>
+        /// this will fetch a single recored from the database and delete it,
+        /// identification is required for safer operation
+        /// a String confirmation of the operation will be returned
+        /// </summary>
+        public async Task<List<SupplierInvoice>> DeleteInvoiceAsync(String inv)
+        {
+            try
+            {
+                /* there must be an identifier passed from the drid, most preferably unique value,
+                 ..or primary id for proper identification of which records to be deleted, for larger,
+                 ..DB it can also be a sequence of unique identifier which gives more sercurity to,
+                 ..some similar records, but if a file has a primary key then Jackport, which in our,
+                 ..instance it does have but its stored anywhere for later use, using invoice number,
+                 ..would also not work since i can have two of the same invoice nummber, decide how you,
+                 ..would go about this one, I would just store a unique Id in an invisible field on the grid,
+                 ..its quiker that way, i might be wrong thou */
+            
+                Guid id = Guid.Parse(inv);
+                var invoiceToDelete = new SupplierInvoice { Id = id };
+
+                var response = await _supabaseClient
+                    .From<SupplierInvoice>()
+                    .Where(x => x.Id == id)
+                    .Delete(invoiceToDelete);
+
+                if (response != null)
+                {
+                    //this will execute if the record was found on the DB
+                    //it will just be a confirmation to the user that the record selected was deleted
+                    return response.Models;
+                }
+                else
+                {
+                    //just for safety we are gonna do this, it would not make sense since there was a record,
+                    //..selected from the grid, why would it not exist on the DB but then again things do happen
+                    return new List<SupplierInvoice>();
+                }
+            }
+            catch (Exception ex) {
+                // If an error occurs, log it
+                Console.WriteLine($"Error fetching all invoices: {ex}");
+                // Throw a new error message
+                throw new Exception($"Failed to fetch invoices. Details: {ex.Message}", ex);
+            }
+         
         }
     }
 }
