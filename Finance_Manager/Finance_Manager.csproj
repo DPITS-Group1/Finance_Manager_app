@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="CsvHelper, Version=33.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.33.0.1\lib\net48\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Abstractions, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.7.0.3\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
@@ -76,26 +82,26 @@
       <HintPath>..\packages\supabase-storage-csharp.1.4.0\lib\netstandard2.0\Supabase.Storage.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.7.0.3\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.0\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive, Version=5.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.5.0.0\lib\net472\System.Reactive.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -130,84 +136,82 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerInvoice_Control.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomerInvoice_Control.Designer.cs">
-      <DependentUpon>CustomerInvoice_Control.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dashboard_Control.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Dashboard_Control.Designer.cs">
-      <DependentUpon>Dashboard_Control.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expenses_Control.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Expenses_Control.Designer.cs">
-      <DependentUpon>Expenses_Control.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Views\Forms\SupplierInvoicesReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\Forms\SupplierInvoicesReportForm.Designer.cs">
+      <DependentUpon>SupplierInvoicesReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Income_Control.cs">
+    <Compile Include="Views\UserControls\CustomerInvoicesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Income_Control.Designer.cs">
-      <DependentUpon>Income_Control.cs</DependentUpon>
+    <Compile Include="Views\UserControls\CustomerInvoicesUserControl.Designer.cs">
+      <DependentUpon>CustomerInvoicesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\DashboardUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\DashboardUserControl.Designer.cs">
+      <DependentUpon>DashboardUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ExpensesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\ExpensesUserControl.Designer.cs">
+      <DependentUpon>ExpensesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\IncomeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\IncomeUserControl.Designer.cs">
+      <DependentUpon>IncomeUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\SupplierInvoice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports_Control.cs">
+    <Compile Include="Views\UserControls\ReportsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reports_Control.Designer.cs">
-      <DependentUpon>Reports_Control.cs</DependentUpon>
+    <Compile Include="Views\UserControls\ReportsUserControl.Designer.cs">
+      <DependentUpon>ReportsUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SupabaseService.cs" />
-    <Compile Include="Supplier_Control.cs">
+    <Compile Include="Repositories\SupabaseService.cs" />
+    <Compile Include="Views\Forms\ReportViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\ReportViewDialog.Designer.cs">
+      <DependentUpon>ReportViewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\SupplierInvoicesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Supplier_Control.Designer.cs">
-      <DependentUpon>Supplier_Control.cs</DependentUpon>
+    <Compile Include="Views\UserControls\SupplierInvoicesUserControl.Designer.cs">
+      <DependentUpon>SupplierInvoicesUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomerInvoice_Control.resx">
-      <DependentUpon>CustomerInvoice_Control.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Forms\SupplierInvoicesReportForm.resx">
+      <DependentUpon>SupplierInvoicesReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard_Control.resx">
-      <DependentUpon>Dashboard_Control.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserControls\CustomerInvoicesUserControl.resx">
+      <DependentUpon>CustomerInvoicesUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Expenses_Control.resx">
-      <DependentUpon>Expenses_Control.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserControls\DashboardUserControl.resx">
+      <DependentUpon>DashboardUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserControls\ExpensesUserControl.resx">
+      <DependentUpon>ExpensesUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Income_Control.resx">
-      <DependentUpon>Income_Control.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserControls\IncomeUserControl.resx">
+      <DependentUpon>IncomeUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -218,12 +222,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports_Control.resx">
-      <DependentUpon>Reports_Control.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserControls\ReportsUserControl.resx">
+      <DependentUpon>ReportsUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Supplier_Control.resx">
-      <DependentUpon>Supplier_Control.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Forms\ReportViewDialog.resx">
+      <DependentUpon>ReportViewDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\SupplierInvoicesUserControl.resx">
+      <DependentUpon>SupplierInvoicesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -236,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

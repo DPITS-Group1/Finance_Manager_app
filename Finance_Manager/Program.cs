@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Finance_Manager
@@ -16,7 +13,7 @@ namespace Finance_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1() /*Form2()*/ /*Form3()*/);
+            Application.Run(new MainForm());
         }
     }
 }

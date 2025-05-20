@@ -1,6 +1,6 @@
 ﻿namespace Finance_Manager
 {
-    partial class Dashboard_Control
+    partial class DashboardUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDashboard = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,21 +46,11 @@
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblDashboard
-            // 
-            this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.Location = new System.Drawing.Point(33, 11);
-            this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(126, 25);
-            this.lblDashboard.TabIndex = 0;
-            this.lblDashboard.Text = "Dashboard";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(38, 78);
+            this.panel1.Location = new System.Drawing.Point(30, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(187, 123);
             this.panel1.TabIndex = 1;
@@ -80,7 +69,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(247, 73);
+            this.panel2.Location = new System.Drawing.Point(239, 41);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(187, 123);
             this.panel2.TabIndex = 2;
@@ -99,7 +88,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(454, 73);
+            this.panel3.Location = new System.Drawing.Point(446, 41);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(187, 123);
             this.panel3.TabIndex = 2;
@@ -118,7 +107,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(663, 73);
+            this.panel4.Location = new System.Drawing.Point(655, 41);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(187, 123);
             this.panel4.TabIndex = 2;
@@ -138,9 +127,9 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(38, 217);
+            this.panel5.Location = new System.Drawing.Point(30, 185);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(812, 250);
+            this.panel5.Size = new System.Drawing.Size(812, 307);
             this.panel5.TabIndex = 2;
             // 
             // label2
@@ -164,7 +153,7 @@
             this.label1.Text = "Revenue Overview";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Dashboard_Control
+            // DashboardUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,9 +162,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblDashboard);
-            this.Name = "Dashboard_Control";
-            this.Size = new System.Drawing.Size(873, 503);
+            this.Name = "DashboardUserControl";
+            this.Size = new System.Drawing.Size(870, 520);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -187,12 +175,10 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

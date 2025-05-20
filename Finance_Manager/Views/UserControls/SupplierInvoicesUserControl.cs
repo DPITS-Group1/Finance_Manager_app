@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Finance_Manager.Models;
+using Finance_Manager.Repositories;
 
 namespace Finance_Manager
 {
-    public partial class Form2 : Form
+    public partial class SupplierInvoicesUserControl : UserControl
     {
-
-      
-
-        public Form2()
+        public SupplierInvoicesUserControl()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void SupplierInvoicesUserControl_Load(object sender, EventArgs e)
         {
             //default list for status
             cmbstatus.Items.Add("Pending");
@@ -24,15 +20,15 @@ namespace Finance_Manager
             cmbstatus.Items.Add("Overdue");
 
 
-            
+
             cmbpaymentterms.Items.Add("Net 15");
             cmbpaymentterms.Items.Add("Net 30");
             cmbpaymentterms.Items.Add("Net 45");
             cmbpaymentterms.Items.Add("Net 60");
+
+            cmbpaymentterms.SelectedIndex = 1;
+            cmbstatus.SelectedIndex = 0;
         }
-
-
-      
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -97,14 +93,15 @@ namespace Finance_Manager
                     // Fill the properties from the form fields
                     SupplierName = txtsuppliername.Text.Trim(),
                     InvoiceNumber = txtinvoicenumber.Text.Trim(),
-                    InvoiceDate = dtpInvoiceDate.Value.Date,
+                    InvoiceDate = dtpInvoiceDate.Value.ToUniversalTime(),
                     Amount = amount,
                     PaymentTerms = cmbpaymentterms.SelectedItem.ToString(),
                     Status = cmbstatus.SelectedItem.ToString()
                 };
 
                 // Step 4: Save to Supabase database
-                await SupabaseService.Instance.SaveInvoiceAsync(invoice);
+                SupplierRepository supplierRepository = new SupplierRepository();
+                await supplierRepository.SaveInvoiceAsync(invoice);
 
                 // Step 5: Show success message
                 MessageBox.Show("Invoice saved successfully!", "Success",
@@ -125,8 +122,6 @@ namespace Finance_Manager
                 this.Cursor = Cursors.Default;
             }
         }
-
-        // Helper method to clear all form fields
         private void ClearForm()
         {
             txtsuppliername.Text = string.Empty;
