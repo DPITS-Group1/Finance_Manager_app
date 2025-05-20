@@ -41,12 +41,11 @@ namespace Finance_Manager.Models
         public string Status { get; set; }
 
         // These columns are often managed automatically by Supabase/Postgres
-        // Use [Column(ignoreOnInsert: true, ignoreOnUpdate: true)] if needed
-        [Column("created_at")]
+        [Column("created_at", ignoreOnInsert: true, ignoreOnUpdate: true)]         
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }
 
-        [Column("updated_at")]
+        [Column("updated_at", ignoreOnInsert: true, ignoreOnUpdate: true)]
         [JsonProperty("updated_at")]
         public DateTime UpdatedAt { get; set; }
 

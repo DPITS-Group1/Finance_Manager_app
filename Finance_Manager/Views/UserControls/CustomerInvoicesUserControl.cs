@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Finance_Manager
 {
-    public partial class Expenses_Control : UserControl
+    public partial class CustomerInvoicesUserControl : UserControl
     {
-        public Expenses_Control()
+        public CustomerInvoicesUserControl()
         {
             InitializeComponent();
-        }
-
-        private void Expenses_Control_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

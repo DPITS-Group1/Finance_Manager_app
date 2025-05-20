@@ -1,31 +1,75 @@
-﻿using Finance_Manager.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Globalization;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CsvHelper;
+using Finance_Manager.Models;
+using Finance_Manager.Repositories;
 
-namespace Finance_Manager
+namespace Finance_Manager.Views.Forms
 {
-    public partial class Form3 : Form
+    public partial class SupplierInvoicesReportForm : Form
     {
-
-        public Form3()
+        private DateTime startDate;
+        private DateTime endDate;
+        private List<SupplierInvoice> invoices;
+        public SupplierInvoicesReportForm(DateTime startDate, DateTime endDate)
         {
             InitializeComponent();
-
+            this.startDate = startDate;
+            this.endDate = endDate;           
         }
-        private async void Form3_Load(object sender, EventArgs e)
+
+        private async void SupplierInvoicesReportForm_Load(object sender, EventArgs e)
         {
             // Set up the DataGridView columns when the form loads
             SetupDataGridView();
+            await FetchInvoicesAsync();
+            LoadDataGridView();
+        }
 
-            // Load the invoice data from the database asynchronously
-            await LoadInvoiceDataAsync();
+        /// <summary>
+        /// Asynchronously fetches invoice data from the Supabase service        
+        /// </summary>
+        private async Task FetchInvoicesAsync()
+        {
+            lblStatus.Text = "Loading invoices...";
+            this.Cursor = Cursors.WaitCursor;
+            dgvInvoices.Enabled = false;
+            btnRefresh.Enabled = false;
+            buttonDownloadAsCSV.Enabled = false;
+            buttonDownloadAsPDF.Enabled = false;
+
+            try
+            {
+                SupplierRepository supplierRepository = new SupplierRepository();
+                invoices = await supplierRepository.GetAllInvoicesAsync(startDate, endDate);
+                lblStatus.Text = $"Loaded {invoices.Count} invoices.";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading invoice data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblStatus.Text = "Error loading data.";
+                // Clear the grid on error?
+                dgvInvoices.DataSource = null;                
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+                dgvInvoices.Enabled = true;
+                btnRefresh.Enabled = true;
+                buttonDownloadAsCSV.Enabled = true;
+                buttonDownloadAsPDF.Enabled = true;
+            }
+        }
+
+
+       
+        private void LoadDataGridView()       
+        {
+            dgvInvoices.DataSource = invoices; // Assign the list directly                        
         }
 
         /// <summary>
@@ -82,7 +126,8 @@ namespace Finance_Manager
                 Name = "AmountCol",
                 HeaderText = "Amount",
                 DataPropertyName = "Amount", // Links to SupplierInvoice.Amount
-                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2", Alignment = DataGridViewContentAlignment.MiddleRight } // Format currency
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2", Alignment = DataGridViewContentAlignment.MiddleRight, FormatProvider = CultureInfo.GetCultureInfo("en-ZA") } // Format currency
+
             });
 
             // 5. Payment Terms  ** (This column was added based on your request) **
@@ -102,65 +147,33 @@ namespace Finance_Manager
             });
         }
 
+        // Event Handler: Runs when the Refresh button is clicked        
 
-        /// <summary>
-        /// Asynchronously fetches invoice data from the Supabase service
-        /// and displays it in the DataGridView.
-        /// </summary>
-        private async Task LoadInvoiceDataAsync()
-        {
-            // Ensure controls are not null before accessing
-            if (lblStatus == null || dgvInvoices == null || btnRefresh == null)
-            {
-                MessageBox.Show("One or more required controls (lblStatus, dgvInvoices, btnRefresh) are not initialized.", "Initialization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            lblStatus.Text = "Loading invoices...";
-            this.Cursor = Cursors.WaitCursor;
-            dgvInvoices.Enabled = false;
-            btnRefresh.Enabled = false;
-
-            try
-            {
-                List<SupplierInvoice> invoices = await SupabaseService.Instance.GetAllInvoicesAsync();
-                // Use BindingList for better update notifications if needed later, otherwise List is fine
-                // var bindingList = new BindingList<SupplierInvoice>(invoices);
-                // dgvInvoices.DataSource = bindingList;
-                dgvInvoices.DataSource = invoices; // Assign the list directly
-
-                lblStatus.Text = $"Loaded {invoices.Count} invoices.";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading invoice data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lblStatus.Text = "Error loading data.";
-                // Clear the grid on error?
-                dgvInvoices.DataSource = null;
-            }
-            finally
-            {
-                this.Cursor = Cursors.Default;
-                dgvInvoices.Enabled = true;
-                btnRefresh.Enabled = true;
-            }
-        }
-
-        // Event Handler: Runs when the Refresh button is clicked
-       
-
-        private async void btnRefresh_Click_1(object sender, EventArgs e)
+        private async void btnRefresh_Click(object sender, EventArgs e)
         {
             // Reload the data when the refresh button is clicked
-            await LoadInvoiceDataAsync();
+            await FetchInvoicesAsync();
+            LoadDataGridView();
         }
 
-        private void btnOpenSupplierForm_Click(object sender, EventArgs e)
+        private void buttonDownloadAsPDF_Click(object sender, EventArgs e)
         {
-            Form2 supplierForm = new Form2();
-            supplierForm.Show();
+            MessageBox.Show("PDF download functionality is not yet implemented.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-    
+        private void buttonDownloadAsCSV_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveAsDialog = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
+            {
+                if (saveAsDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var writer = new StreamWriter(saveAsDialog.FileName))
+                    using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                    {
+                        csv.WriteRecords(invoices);
+                    }
+                }
+            }
+        }
     }
 }
