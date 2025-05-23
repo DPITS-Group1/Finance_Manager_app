@@ -318,7 +318,9 @@
             this.reports_Control1.TabIndex = 6;
             // 
             // dashboard_Control1
-            // 
+            //             this.dashboard_Control1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dashboard_Control1.Location = new System.Drawing.Point(205, 68);
             this.dashboard_Control1.Name = "dashboard_Control1";
             this.dashboard_Control1.Size = new System.Drawing.Size(873, 503);
